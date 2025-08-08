@@ -28,9 +28,24 @@ local function read_json(path)
     return table
 end
 
+local function typewriterPrint(message)
+    local delay = 0.05
+    for i = 1, #message do
+        io.write(message:sub(i, i))
+        io.flush()
+        os.execute("sleep " .. delay)
+    end
+    print() 
+end
+
+local function delayed_call(callback, args, delay)
+    os.execute("sleep " .. tonumber(delay))
+    callback(unpack(args))
+end
+
 local content = read_json("./useless.json")
 if not content then
   error("could not open file ")
 end
 
-draw_line("#")
+
