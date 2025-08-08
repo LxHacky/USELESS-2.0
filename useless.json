@@ -5,9 +5,8 @@
       "ascii": {
         "text": "TINKER HUB",
         "attributes": {
+          "delay": "2",
           "color": "red",
-          "position": "center",
-          "present_method": "typewriter"
         }
       }
     },
@@ -16,23 +15,21 @@
       "paragraph": {
         "text": "presents",
         "attributes": {
-          "color": "white",
-          "position": "center",
-          "font_style": "bold",
-          "present_method": "typewriter"
+          "color": "blue",
+          "effect": "typewriter",
         }
       }
     },
-    "line"
+    "line",
+    "newline",
   ],
   [
     {
       "ascii": {
         "text": "useless hackathon 2.0",
         "attributes": {
-          "color": "yellow",
-          "position": "center",
-          "present_method": "delay"
+          "color": "green",
+          "delay": "2",
         }
       }
     }

@@ -9,9 +9,10 @@ local colors = {
     cyan    = "\27[36m",
     white   = "\27[37m",
 
-    set_color = function(color)
-      io.write(color)
-    end
 }
 
-return colors
+local set_color = function(color)
+  if colors[color] then io.write(colors[color]) end
+end
+
+return set_color
