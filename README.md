@@ -44,10 +44,6 @@ For Software:
 
 example: `./input.lua demo.json`
 ### Project Documentation
-Here’s a concise documentation you can include for your project that explains how to write the JSON file:
-
----
-
 
 ## **JSON File Structure**
 
@@ -133,7 +129,7 @@ An **entity** can be:
 ![demo](demo.gif)
 
 ## Team Contributions
-- Hari: implamentation
+- Hari: implementation
 - Shafi: idea and minor contributions
 ---
 Made with ❤ at TinkerHub Useless Projects
