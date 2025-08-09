@@ -3,11 +3,14 @@ local json = require("dkjson")
 local set_color = require("ansi_colors")
 
 local delay = 0.1
+local width = 80
+local line_char = "#"
 
 local function draw_line(char)
-    local width = tonumber(os.getenv("COLUMNS")) or 80
+    set_color("grey")
     local line = string.rep(char, width)
     print(line)
+    set_color("reset")
 end
 
 
@@ -36,20 +39,8 @@ local function typewriter_print(message)
     print()
 end
 
-local function delayed_call(callback, args, _delay)
-    os.execute("sleep " .. tonumber(_delay))
-    callback(table.unpack(args))
-end
-
-local content = read_json("./useless.json")
-if not content then
-  error("could not open file ")
-end
-
 local function handle_effects(effect, message)
-    if effect == "delay" then
-        delayed_call(print, {message}, 1)
-    elseif effect == "typewriter" then
+    if effect == "typewriter" then
         typewriter_print(message)
     end
 end
@@ -71,21 +62,42 @@ local function process_ascii(ascii)
         if attributes.color then set_color(attributes.color) end
         if attributes.delay then os.execute("sleep " .. tonumber(attributes.delay)) end
     end
-    print_ascii_art(ascii.text)
+    print_ascii_art(ascii.text);
     set_color("reset")
 end
 
-for _, slide in ipairs(content) do
-    for _, entity in ipairs(slide) do
-        if entity == "line" then
-            draw_line("#")
-        elseif entity == "newline" then
-            print()
-        elseif entity.paragraph then
-            process_paragraph(entity.paragraph)
-        elseif entity.ascii then
-            process_ascii(entity.ascii)
+local root = read_json("./useless.json")
+if not root then
+  error("could not open file ")
+end
+
+if root.width then width = root.width end
+if root.line_character then line_char = root.line_character end
+
+os.execute("clear")
+if root.body then
+    for i, slide in ipairs(root.body) do
+        set_color("grey")
+        print("\n[[ " .. i .. " ]]")
+        set_color("reset")
+        for _, entity in ipairs(slide) do
+            if entity == "line" then
+                draw_line(line_char)
+            elseif entity == "newline" then
+                print()
+            elseif entity == "refresh" then
+                os.execute("clear")
+            elseif entity.paragraph then
+                process_paragraph(entity.paragraph)
+            elseif entity.ascii then
+                process_ascii(entity.ascii)
+            end
         end
+        io.write("\npress Enter to continue..");
+        io.read()
     end
 end
 
+set_color("red")
+print("\n[[ END ]]\n")
+set_color("reset")

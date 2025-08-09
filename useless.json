@@ -1,39 +1,150 @@
-[
-  [
-    "line",
-    {
-      "ascii": {
-        "text": "TINKER HUB",
-        "attributes": {
-          "delay": "2",
-          "color": "red",
+{
+  "width": 90,
+  "line_character": "-",
+  "body": [
+    [
+      {
+        "paragraph": {
+          "text": "starts in...",
+          "attributes": {
+            "color": "red"
+          }
         }
-      }
-    },
-    "line",
-    {
-      "paragraph": {
-        "text": "presents",
-        "attributes": {
-          "color": "blue",
-          "effect": "typewriter",
+      },
+      {
+        "paragraph": {
+          "text": "   3...",
+          "attributes": {
+            "color": "red",
+            "delay": "0.5",
+            "effect":  "typewriter",
+          }
         }
-      }
-    },
-    "line",
-    "newline",
-  ],
-  [
-    {
-      "ascii": {
-        "text": "useless hackathon 2.0",
-        "attributes": {
-          "color": "green",
-          "delay": "2",
+      },
+      {
+        "paragraph": {
+          "text": "   2...",
+          "attributes": {
+            "color": "green",
+            "delay": "0.5",
+            "effect":  "typewriter",
+          }
         }
-      }
-    }
+      },
+      {
+        "paragraph": {
+          "text": "   1...",
+          "attributes": {
+            "color": "cyan",
+            "delay": "0.5",
+            "effect":  "typewriter",
+          }
+        }
+      },
+      "newline",
+      {
+        "ascii": {
+          "text": "tinker hub",
+          "attributes": {
+            "color": "blue",
+            "delay": "0.5",
+          }
+        }
+      },
+      "newline",
+      {
+        "paragraph": {
+          "text": "PRESENTING",
+          "attributes": {
+            "color": "red",
+            "delay": "0.5",
+            "effect":  "typewriter",
+          }
+        }
+      },
+      "newline",
+      "line",
+      "line",
+      {
+        "ascii": {
+          "text": "useless projects 2.0",
+          "attributes": {
+            "color": "cayn",
+          }
+        }
+      },
+      "line",
+      "line",
+    ],
+    [
+      {
+        "paragraph": {
+          "text": "useless project is a no-pressure make-a-thon where students create quirky scrappy ideas just for the joy of making.",
+          "attributes": {
+            "delay": "0.5",
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "text": "Here, we encourages",
+          "attributes": {
+            "delay": "0.5",
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "text": " -  Creativity",
+          "attributes": {
+            "color": "yellow",
+            "delay": "1",
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "text": " -   Originality",
+          "attributes": {
+            "color": "green",
+            "delay": "1",
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "text": " -   Courage to build anything blindfolded.",
+          "attributes": {
+            "color": "red",
+            "delay": "1",
+          }
+        }
+      },
+    ],
+    [
+      "newline",
+      "line",
+      {
+        "ascii": {
+          "text": "register now!",
+          "attributes": {
+            "color": "red",
+            "delay": "1",
+          }
+        }
+      },
+      "line",
+      "newline",
+      {
+        "paragraph": {
+          "text": "FOR free!!!!!",
+          "attributes": {
+            "color": "green",
+            "effect": "typewriter",
+          }
+        }
+      },
+      "line"
+    ],
   ]
-]
-
-
+}
