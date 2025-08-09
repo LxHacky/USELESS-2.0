@@ -1,6 +1,7 @@
-local print_ascii_art = require("ascii_chars")
+#! /usr/bin/env lua
+local print_ascii_art = require("./libs/ascii_chars")
+local set_color = require("./libs/ansi_colors")
 local json = require("dkjson")
-local set_color = require("ansi_colors")
 
 local delay = 0.1
 local width = 80
@@ -66,7 +67,7 @@ local function process_ascii(ascii)
     set_color("reset")
 end
 
-local root = read_json("./useless.json")
+local root = read_json(arg[1])
 if not root then
   error("could not open file ")
 end
